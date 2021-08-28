@@ -21,11 +21,11 @@ const usersSchema=new Schema(
         type:String,
         required:true
     },
-    classes:
+    presentationid:
     {
         type:[String],
     },
-    classname:
+    presentationname:
     {
         type:[String],
     },

@@ -1,0 +1,53 @@
+*
+{
+    font-family: 'Kaisei Tokumin', serif;}
+
+.presentationlist
+{
+    position: absolute;
+    text-decoration: none;
+    left: 30%;
+    right: 30%;
+}
+.inline-block
+{
+    display: inline-block;
+}
+.left
+{
+    position: absolute;
+    left: 0;
+    right:20%;
+    top:50%;
+    transform: translateY(-50%);
+}
+.wrapper
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right:25px;
+    bottom: 25px;
+    top:75px;
+    left:20%;
+    padding: 20px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);    
+}
+textarea
+{
+    margin: 20px 0;
+    padding: 5px;
+    height: 200px;
+    resize: both;
+    max-width: 100%;
+}
+::placeholder
+{
+    text-align: center;
+    font-size: 50px;
+}

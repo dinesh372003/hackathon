@@ -1,0 +1,47 @@
+<%-include("../Partials/header")%>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- <div class="vertical-nav" id="sidebar";>
+        <div class="py-4 px-3 mb-4 asd bg-dark">
+            <div class="media d-flex align-items-center">
+                <div class="media-body">
+                    <h2 class="m-0 name"style="color: Orange" ><strong>Hi <%=User.fname%></strong></h2>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <%for(var i=1;i<=User.presentationname.length;i++){%>
+        <li class="presentationlist fs-3">
+            <a href="/<%-User.presentationid%>" style="text-decoration: none; color: black;"><%=User.presentationname[i-1]%></a>
+            </li>
+            <br><br>
+    <%}%>
+    <li class="presentationlist fs-3 ">
+        <p class="inline-block" style="text-decoration: none;">New presentation:</p>
+        <br>
+        <form class="fs-5 ms-5" method="POST" action="/new">
+            <label>
+               <strong> Presentation Name:</strong>
+            </label>
+            <br>
+            <input name="pptname" class="ms-5 mt-2" placeholder="Enter the presentation name"></input>
+            <br>
+            <button type="submit" class="btn button btn-warning fs-6 fw-bold mt-2 ms-5 text-center">Create</button>
+            <br>
+            <br>
+        </form>
+    </li>
+</body>
+<style>
+    ::placeholder
+    {
+        font-size: 15px;
+        place-content: center;
+        color:grey;
+    }
+</style>
+
+</html>

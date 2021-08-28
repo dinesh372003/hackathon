@@ -1,14 +1,28 @@
 const express=require("express");
 const router=express.Router();
 const dashcont=require("../Controller/Dashboardcontroller");
+const presentation=require("../Schema/Presentationschema")
 router.get("/",dashcont.dashboard);
-router.get("/newclass",(req,res)=>
+router.get("/new",(req,res)=>
 {
-    res.render("newclass",{User:req.user,title:"New Class"});
+    res.render("newpresentation",{User:req.user,title:"New Presentation"});
 });
-router.get("/joinclass",(req,res)=>
+router.post("/new",dashcont.newpresentation);
+router.get("/:id",(req,res)=>
 {
-    res.render("joinclass",{User:req.user,title:"Join Class"});
-});
-router.post("/newclass",dashcont.newclass);
+    const id=req.params.id;
+    presentation.findById(id)
+    .then(result=>
+        {    
+        res.render("ppt",{presentation:result,User:req.user});
+        })
+    .catch(err=>console.log(err));
+})
+router.post("/:id",(req,res)=>
+{
+    const id=req.params.id;
+    {
+        
+    }
+})
 module.exports=router;
