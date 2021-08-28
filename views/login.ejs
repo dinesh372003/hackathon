@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/Styles-login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <title>School | Login</title> -->
+  </head>
+  <body>
+    <script src="https://kit.fontawesome.com/7a38de8003.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="container text-center">
+        <!-- <img class="intro-img" src="/edu.png" alt="education picture"> -->
+     <!-- <div class="login-container"> -->
+    <p class="text-center fw-bolder" style="font-size: calc(1.2rem + 3.5vw);color:red;">
+        <!-- School -->
+    </p>
+
+    <p class="text-center fw-bolder" style="font-size: calc(1.2rem + 3.5vw)">
+        Login
+    </p>
+    
+    <form method="POST" action="/users/login">
+            <div class="mb-3">
+                <i class="fas fa-user"></i>
+                <label for="email" class="form-label">Email Id</label>
+                <br>
+                <input type="email" name="email" class="input-login" id="email" placeholder="Enter the Email Id" required/>
+              </div>
+
+              <div class="mb-3">
+                <i class="fas fa-lock"></i>
+                <label for="password" class="form-label">Password</label>
+                <br>
+                <input type="password" name="password" class="input-login" id="password" placeholder="Enter the Password" required/>
+              </div>
+
+            
+              <button type="submit" class="btn-1">Submit</button>
+        
+    </form>
+    <p style="display: inline-block;">Don't have an account?</p><a href="/users/register" style="text-decoration:none;"> Register</a>
+<!-- </div> -->
+</div>
+  </body>
+</html>
+
+<style>
+    body
+    {
+        background-color: #6D63FF;
+    }
+</style>
