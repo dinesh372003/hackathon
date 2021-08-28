@@ -11,7 +11,7 @@ router.post("/new",dashcont.newpresentation);
 router.get("/:id",(req,res)=>
 {
     const id=req.params.id;
-    presentation.findById(id)
+    presentation.findById(req.user.presentationid)
     .then(result=>
         {    
         res.render("ppt",{presentation:result,User:req.user});
@@ -39,7 +39,7 @@ router.post("/:id/save",(req,res)=>
                 slideno:1,
             }
         })
-    .then(result=>res.redirect(("/"+id)))
+    .then(result=>res.redirect("/"+id))
     .catch(err=>console.log(err));
 })
 module.exports=router;

@@ -30,7 +30,6 @@ new LocalStrategy({ passReqToCallback: true ,usernameField:"email",passwordField
             } 
             else 
             {
-                console.log(password,user.password);
                 return done(null, false, req.flash("error-login","Incorrect Password"));
             }
         });
