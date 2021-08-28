@@ -18,11 +18,28 @@ router.get("/:id",(req,res)=>
         })
     .catch(err=>console.log(err));
 })
-router.post("/:id",(req,res)=>
+router.post("/:id/save",(req,res)=>
 {
     const id=req.params.id;
-    {
-        
-    }
+    presentation.findOneAndUpdate(
+        {
+            _id:id
+        },
+        {
+            $addToSet:
+            {
+                content:
+                {
+                    "Head":req.body.head,
+                    "Body":req.body.body,
+                }        
+            },
+            $inc:
+            {
+                slideno:1,
+            }
+        })
+    .then(result=>res.redirect(("/"+id)))
+    .catch(err=>console.log(err));
 })
 module.exports=router;

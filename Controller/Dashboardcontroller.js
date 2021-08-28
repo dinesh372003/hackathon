@@ -11,6 +11,7 @@ const newpresentation=(req,res)=>
    const presentations=new Presentation;
    presentations.name=req.body.pptname;
    presentations.user=req.user.email;
+   presentations.slideno=0;
    presentations.save()
    .then((result)=>
     {
@@ -18,11 +19,13 @@ const newpresentation=(req,res)=>
         {
             _id:req.user._id,
         },
-        {$addToSet:
         {
-            presentationid:presentations.id,
-            presentationname:presentations.name,
-        }})
+            $addToSet:
+            {
+                presentationid:presentations.id,
+                presentationname:presentations.name,
+            },
+        })
         .then(result=res.redirect("/"))
         .catch(err=>console.log(err));
     })

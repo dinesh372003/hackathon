@@ -12,6 +12,11 @@ const presentationSchema=new Schema(
         type:String,
         required:true,
     },
+    slideno:
+    {
+        type:Number,
+        required:true,
+    },
     content:
     {
         type:Object,
